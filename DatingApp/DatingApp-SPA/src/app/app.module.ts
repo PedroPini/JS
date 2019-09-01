@@ -10,6 +10,7 @@ import { TextMaskModule } from 'angular2-text-mask';
 import { AuthService } from './_services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
+// import { ErrorInterceptorProvider } from './_services/error.interceptor';
 
 @NgModule({
    declarations: [
@@ -27,6 +28,7 @@ import { HomeComponent } from './home/home.component';
    ],
    providers: [
       AuthService
+      // ErrorInterceptorProvider
    ],
    bootstrap: [
       AppComponent
