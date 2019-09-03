@@ -2,6 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
+import {BsDropdownModule} from 'ngx-bootstrap';
+
 import { AppComponent } from './app.component';
 import { HttpClient } from 'selenium-webdriver/http';
 import { NavComponent } from './nav/nav.component';
@@ -24,7 +26,8 @@ import { ErrorInterceptorProvider } from './_services/error.interceptor';
       BrowserModule,
       HttpClientModule,
       FormsModule,
-      TextMaskModule
+      TextMaskModule,
+      BsDropdownModule.forRoot()
    ],
    providers: [
       AuthService,
