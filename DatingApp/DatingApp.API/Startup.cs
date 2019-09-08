@@ -20,6 +20,7 @@ using System.Net;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Diagnostics;
 using DatingApp.API.Helpers;
+using AutoMapper;
 
 namespace DatingApp.API
 {
@@ -56,6 +57,7 @@ namespace DatingApp.API
                     };
                 });
                 services.AddCors();
+                services.AddAutoMapper(typeof(DatingRepository).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
