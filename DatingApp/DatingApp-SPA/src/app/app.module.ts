@@ -29,7 +29,7 @@ import {UserService} from './_services/user.service';
       HomeComponent,
       MemberListComponent,
       ListsComponent,
-      MessagesComponent      
+      MessagesComponent
    ],
    imports: [
       BrowserModule,
