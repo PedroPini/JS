@@ -16,6 +16,7 @@ export class MemberEditComponent implements OnInit {
   unloadNotification($event: any) {
     if(this.editForm.dirty) {
       $event.returnValue = true;
+      return false;
     }
   }
 
