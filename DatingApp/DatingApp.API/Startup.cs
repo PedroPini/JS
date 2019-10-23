@@ -41,9 +41,14 @@ namespace DatingApp.API
             .AddJsonOptions(opt => {
                 opt.SerializerSettings.ReferenceLoopHandling = 
                 Newtonsoft.Json.ReferenceLoopHandling.Ignore;
-            });            
+            });
+            services.AddCors();
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings"));
+            services.AddAutoMapper(typeof(DatingRepository).Assembly);
+            services.AddTransient<Seed>();
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IDatingRepository, DatingRepository>();
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => {
                     options.TokenValidationParameters = new TokenValidationParameters
@@ -56,8 +61,10 @@ namespace DatingApp.API
 
                     };
                 });
-                services.AddCors();
-                services.AddAutoMapper(typeof(DatingRepository).Assembly);
+                
+                
+                
+                
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
